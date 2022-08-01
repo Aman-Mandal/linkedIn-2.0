@@ -1,7 +1,7 @@
 import classes from './Header.module.css'
 import { FaSearch, FaHome, FaBriefcase, FaUsers, FaBell } from 'react-icons/fa'
-import logo from '../../Aspects/linkedin.png'
-import profilePic from '../../Aspects/me.jpg'
+import logo from '../../Assets/linkedin.png'
+import profilePic from '../../Assets/me.jpg'
 import { NavLink } from 'react-router-dom'
 
 const Header = () => {

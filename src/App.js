@@ -1,15 +1,14 @@
-import './App.css'
 import Header from './Components/Header/Header'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import Home from './Pages/Home'
-import Jobs from './Pages/Jobs'
-import Messaging from './Pages/Messaging'
-import Notifications from './Pages/Notifications'
-import MyNetwork from './Pages/MyNetwork'
-
+import Home from './Pages/Home/Home'
+import Jobs from './Pages/Jobs/Jobs'
+import Messaging from './Pages/Messaging/Messaging'
+import Notifications from './Pages/Notifications/Notifications'
+import MyNetwork from './Pages/MyNetwork/MyNetwork'
+import classes from './App.module.css'
 function App() {
   return (
-    <div className="App">
+    <div className={classes.app}>
       <Router>
         <Header />
         <Routes>
