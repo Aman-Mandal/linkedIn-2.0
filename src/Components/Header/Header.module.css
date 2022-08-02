@@ -31,6 +31,8 @@
 }
 
 .header-search > input {
+  font-size: 15px;
+  margin-left: 5px;
   outline: none;
   border: none;
   background: none;
