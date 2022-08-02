@@ -2,6 +2,8 @@ import React from 'react'
 import classes from './Sidebar.module.css'
 import profilePic from '../../Assets/me.jpg'
 import backgroundImg from '../../Assets/bg.webp'
+import { MdGroups } from 'react-icons/md'
+import { FaCalendar } from 'react-icons/fa'
 
 const Sidebar = () => {
   const recentItem = topic =>
@@ -9,8 +11,25 @@ const Sidebar = () => {
     <div className={classes['sidebar-recentItem']}>
       <span className={classes['sidebar-hash']}>#</span>
       <p>{topic}</p>
-
     </div>
+
+  const recentGroups = groupName => (
+    <div className={classes['sidebar-group']}>
+      <span className={classes['sidebar-groupIcon']}>
+        <MdGroups />
+      </span>
+      <p>{groupName}</p>
+    </div>
+  )
+
+  const recentEvents = event => (
+    <div className={classes['sidebar-recentEvent']}>
+      <span className={classes['sidebar-eventIcon']}>
+        <FaCalendar />
+      </span>
+      <p>{event}</p>
+    </div>
+  )
 
   return (
     <div className={classes.sidebar}>
@@ -40,6 +59,22 @@ const Sidebar = () => {
         {recentItem('softwaredevelopment')}
         {recentItem('design')}
       </div>
+
+      <div className={classes['sidebar-groups']}>
+        <p>Groups</p>
+        {recentGroups('Software Developer')}
+        {recentGroups('React Developers')}
+        {recentGroups('Javascript Developers')}
+        {recentGroups('FrontEnd Developers')}
+      </div>
+
+      <div className={classes['sidebar-events']}>
+        <p>Events</p>
+        {recentEvents('Tech Stories with Aman...')}
+        {recentEvents('Machine Learning with Mosh')}
+      </div>
+
+      <div className={classes['sidebar-end']}>Discover More</div>
     </div>
   )
 }
