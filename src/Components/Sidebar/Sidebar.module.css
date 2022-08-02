@@ -1,5 +1,6 @@
 .sidebar {
   margin-top: 10px;
+  margin-left: 10px;
   flex: 0.2;
   position: sticky;
   top: 80px;

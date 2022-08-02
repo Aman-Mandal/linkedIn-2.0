@@ -1,9 +1,9 @@
 import React from 'react'
 import classes from './Sidebar.module.css'
-import profilePic from '../../Assets/me.jpg'
 import backgroundImg from '../../Assets/bg.webp'
 import { MdGroups } from 'react-icons/md'
 import { FaCalendar } from 'react-icons/fa'
+import Avatar from '../Avatar/Avatar'
 
 const Sidebar = () => {
   const recentItem = topic =>
@@ -35,7 +35,7 @@ const Sidebar = () => {
     <div className={classes.sidebar}>
       <div className={classes['sidebar-top']}>
         <img className={classes.background} src={backgroundImg} />
-        <img className={classes.avatar} src={profilePic} alt="me" />
+        <Avatar />
         <h2>Aman Mandal</h2>
         <p>Frontend Developer 💻</p>
       </div>
