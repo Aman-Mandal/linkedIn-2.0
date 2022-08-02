@@ -19,7 +19,7 @@ const FeedInput = () => {
   return (
     <div className={classes['feed-inputContainer']}>
       <div className={classes['feed-input']}>
-        <Avatar />
+        <Avatar borderRadius={50} height={60} width={60} />
         <form onSubmit={formSubmitHandler}>
           <input type="text" placeholder="Start a post" />
         </form>

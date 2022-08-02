@@ -1,8 +1,8 @@
 import classes from './Header.module.css'
 import { FaSearch, FaHome, FaBriefcase, FaUsers, FaBell } from 'react-icons/fa'
 import logo from '../../Assets/linkedin.png'
-import profilePic from '../../Assets/me.jpg'
 import { NavLink } from 'react-router-dom'
+import Avatar from '../Avatar/Avatar'
 
 const Header = () => {
   const routes = [
@@ -17,7 +17,6 @@ const Header = () => {
     <div className={classes.header}>
       <div className={classes['header-left']}>
         <img src={logo} alt="LinkedIn logo" />
-
         <div className={classes['header-search']}>
           <FaSearch />
           <input />
@@ -36,7 +35,7 @@ const Header = () => {
           </NavLink>
         ))}
         <div className={classes['header-avatar']}>
-          <img src={profilePic} alt="me" />
+          <Avatar borderRadius={50} height={37} width={37} />
           <p>Me</p>
         </div>
       </div>

@@ -1,11 +1,14 @@
 import React from 'react'
-import classes from './Avatar.module.css'
 import profilePic from '../../Assets/me.jpg'
 
-const Avatar = () => {
+const Avatar = ({ width, height, borderRadius }) => {
   return (
     <div>
-      <img className={classes.avatar} src={profilePic} alt="me" />
+      <img
+        src={profilePic}
+        alt="me"
+        style={{ width: width, height: height, borderRadius: borderRadius }}
+      />
     </div>
   )
 }

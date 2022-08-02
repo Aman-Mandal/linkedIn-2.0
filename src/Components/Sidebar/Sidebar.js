@@ -35,7 +35,7 @@ const Sidebar = () => {
     <div className={classes.sidebar}>
       <div className={classes['sidebar-top']}>
         <img className={classes.background} src={backgroundImg} />
-        <Avatar />
+        <Avatar borderRadius={50} height={70} width={70} />
         <h2>Aman Mandal</h2>
         <p>Frontend Developer 💻</p>
       </div>
