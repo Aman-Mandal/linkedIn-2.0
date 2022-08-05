@@ -11,17 +11,17 @@ const inputOptions = [
   { icon: <MdCalendarViewDay />, title: 'Article', color: '#E16745' },
 ]
 
-const FeedInput = () => {
-  const formSubmitHandler = event => {
-    event.preventDefault()
-  }
-
+const FeedInput = ({ formSubmitHandler, inputHandler }) => {
   return (
     <div className={classes['feed-inputContainer']}>
       <div className={classes['feed-input']}>
         <Avatar borderRadius={50} height={60} width={60} />
         <form onSubmit={formSubmitHandler}>
-          <input type="text" placeholder="Start a post" />
+          <input
+            onChange={inputHandler}
+            type="text"
+            placeholder="Start a post"
+          />
         </form>
       </div>
 

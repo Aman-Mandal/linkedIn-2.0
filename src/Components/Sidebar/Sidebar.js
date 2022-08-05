@@ -51,30 +51,32 @@ const Sidebar = () => {
         </div>
       </div>
 
-      <div className={classes['sidebar-bottom']}>
-        <p>Recent</p>
-        {recentItem('ReactJS')}
-        {recentItem('Javascript')}
-        {recentItem('webdevelopment')}
-        {recentItem('softwaredevelopment')}
-        {recentItem('design')}
-      </div>
+      <div className={classes['sticky-sidebar']}>
+        <div className={classes['sidebar-bottom']}>
+          <p>Recent</p>
+          {recentItem('ReactJS')}
+          {recentItem('Javascript')}
+          {recentItem('webdevelopment')}
+          {recentItem('softwaredevelopment')}
+          {recentItem('design')}
+        </div>
 
-      <div className={classes['sidebar-groups']}>
-        <p>Groups</p>
-        {recentGroups('Software Developer')}
-        {recentGroups('React Developers')}
-        {recentGroups('Javascript Developers')}
-        {recentGroups('FrontEnd Developers')}
-      </div>
+        <div className={classes['sidebar-groups']}>
+          <p>Groups</p>
+          {recentGroups('Software Developer')}
+          {recentGroups('React Developers')}
+          {recentGroups('Javascript Developers')}
+          {recentGroups('FrontEnd Developers')}
+        </div>
 
-      <div className={classes['sidebar-events']}>
-        <p>Events</p>
-        {recentEvents('Tech Stories with Aman...')}
-        {recentEvents('Machine Learning with Mosh')}
-      </div>
+        <div className={classes['sidebar-events']}>
+          <p>Events</p>
+          {recentEvents('Tech Stories with Aman...')}
+          {recentEvents('Machine Learning with Mosh')}
+        </div>
 
-      <div className={classes['sidebar-end']}>Discover More</div>
+        <div className={classes['sidebar-end']}>Discover More</div>
+      </div>
     </div>
   )
 }

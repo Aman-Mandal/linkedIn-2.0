@@ -73,6 +73,11 @@
   color: #0a66c2;
 }
 
+.sticky-sidebar{
+  position: sticky;
+  top: 80px;
+}
+
 .sidebar-bottom {
   margin-top: 10px;
   text-align: left;
