@@ -25,12 +25,12 @@ const Post = ({ name, description, message, ImgUrl }) => {
       <div className={classes['post-body']}>
         <p>{message}</p>
       </div>
-    
+
       <div className={classes.line}></div>
 
       <div className={classes['post-buttons']}>
         {postIcons.map(button => (
-          <div className={classes['post-btn']}>
+          <div key={button.name} className={classes['post-btn']}>
             <div className={classes.icons}>{button.icon}</div>
             <p>{button.name}</p>
           </div>
