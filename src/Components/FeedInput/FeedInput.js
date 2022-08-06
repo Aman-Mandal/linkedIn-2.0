@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Avatar from '../Avatar/Avatar'
 import { FaImage, FaVideo, FaBriefcase } from 'react-icons/fa'
 import { MdCalendarViewDay } from 'react-icons/md'
@@ -11,14 +11,32 @@ const inputOptions = [
   { icon: <MdCalendarViewDay />, title: 'Article', color: '#E16745' },
 ]
 
-const FeedInput = ({ formSubmitHandler, inputHandler }) => {
+const FeedInput = props => {
+  const [enteredData, setEnteredData] = useState('')
+
+  const formSubmitHandler = event => {
+    event.preventDefault()
+
+    const postsData = {
+      name: 'Aman',
+      description: 'Developer',
+      message: enteredData,
+    }
+    props.onAddPost(postsData)
+    setEnteredData('')
+  }
+
+  const inputChangeHandler = event => {
+    setEnteredData(event.target.value)
+  }
   return (
     <div className={classes['feed-inputContainer']}>
       <div className={classes['feed-input']}>
         <Avatar borderRadius={50} height={60} width={60} />
         <form onSubmit={formSubmitHandler}>
           <input
-            onChange={inputHandler}
+            value={enteredData}
+            onChange={inputChangeHandler}
             type="text"
             placeholder="Start a post"
           />

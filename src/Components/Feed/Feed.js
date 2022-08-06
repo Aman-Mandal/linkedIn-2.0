@@ -5,7 +5,8 @@ import Post from '../Post/Post'
 
 const Feed = () => {
   const [posts, setPosts] = useState([])
-  const [input, setInput] = useState('')
+
+  // Getting post
   useEffect(() => {
     const fetchPosts = async () => {
       const response = await fetch(
@@ -26,54 +27,37 @@ const Feed = () => {
       setPosts(loadedPosts)
     }
     fetchPosts()
-  }, [])
+  }, [posts])
 
-  const inputHandler = event => {
-    setInput(event.target.value)
+  // Adding post 
+  const addPostHandler = async post => {
+    const response = await fetch(
+      'https://linkedin-clone-c4620-default-rtdb.firebaseio.com/posts.json',
+      {
+        method: 'POST',
+        body: JSON.stringify(post),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      }
+    )
+    const data = await response.json()
+    console.log(data)
   }
-
-  const formSubmitHandler = event => {
-    event.preventDefault()
-  }
-
-  // const collectionRef = collection(db, 'posts')
-
-  // useEffect(() => {
-  //   onSnapshot(collectionRef, snap => {
-  //     setPosts(
-  //       snap.docs.map(doc => ({
-  //         id: doc.id,
-  //         data: doc.data(),
-  //       }))
-  //     )
-  //   })
-  // })
-
-  // const formSubmitHandler = async event => {
-  //   event.preventDefault()
-  //   await addDoc(collectionRef, {
-  //     name: 'Aman K',
-  //     description: 'TEST',
-  //     message: input,
-  //     timestamp: serverTimestamp(),
-  //   })
-  //   setInput('')
-  // }
 
   return (
     <div className={classes.feed}>
-      <FeedInput
-        formSubmitHandler={formSubmitHandler}
-        inputHandler={inputHandler}
-      />
-      {posts.map(({ id, name, message, description }) => (
-        <Post
-          key={id}
-          name={name}
-          message={message}
-          description={description}
-        />
-      ))}
+      <FeedInput onAddPost={addPostHandler} />
+      {posts
+        .map(({ id, name, message, description }) => (
+          <Post
+            key={id}
+            name={name}
+            message={message}
+            description={description}
+          />
+        ))
+        .reverse()}
     </div>
   )
 }
