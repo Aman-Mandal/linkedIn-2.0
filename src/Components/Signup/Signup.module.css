@@ -1,25 +1,10 @@
-.login {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  background: white;
-}
-
-.header {
+.signup {
   display: flex;
-  padding: 20px 50px;
+  flex-direction: column;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
 }
-
-.header > h2 {
-  color: #0a66c2;
-  font-size: 2rem;
-}
-.logo {
-  height: 38px;
-  width: 38px;
-  margin-left: 3px;
-}
-
 .heading {
   font-size: 2rem;
   font-weight: 600;
@@ -31,46 +16,20 @@
   margin-bottom: 25px;
 }
 
-.login-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.form {
+.signup-form {
   display: flex;
   flex-direction: column;
 }
 
-.form > input {
+.signup-form > input {
   padding: 15px;
   border-radius: 5px;
   font-size: 1.1rem;
   border: 1px solid gray;
+  margin-bottom: 25px;
 }
 
-.email {
-  margin-bottom: 30px;
-}
-
-.password {
-  margin-bottom: 10px;
-}
-
-.form > p {
-  cursor: pointer;
-  color: #0a66c2;
-  font-weight: 500;
-  margin-bottom: 20px;
-}
-
-.form > p:hover {
-  text-decoration: underline;
-  color: #05498d;
-}
-
-.sign-in {
+.signup-btn {
   padding: 20px 10px;
   border-radius: 50px;
   border: none;
@@ -82,7 +41,7 @@
   margin-bottom: 8px;
 }
 
-.sign-in:hover {
+.signup-btn:hover {
   background-color: #05498d;
 }
 
@@ -115,22 +74,20 @@
   background-color: whitesmoke;
 }
 
-.join-now {
+.login {
   display: flex;
-  justify-content: center
 }
 
-.join-now > p {
+.login > p {
   margin-right: 5px;
 }
-
-.join-now > span {
+.login > span {
   color: #0a66c2;
   font-weight: 500;
   cursor: pointer;
 }
 
-.join-now > span:hover {
+.login > span:hover {
   color: #05498d;
   text-decoration: underline;
 }
