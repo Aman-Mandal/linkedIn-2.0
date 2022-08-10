@@ -10,7 +10,7 @@ import classes from './App.module.css'
 import Login from './Components/Login/Login'
 
 function App() {
-  const user = useSelector(state => state.user.userReducer)
+  const user = useSelector(state => state.user.user)
 
   return (
     <div className={classes.app}>

@@ -2,8 +2,16 @@ import React from 'react'
 import classes from './Login.module.css'
 import logo from '../../Assets/linkedin.png'
 import google from '../../Assets/google.png'
+import { useDispatch } from 'react-redux'
+import { userActions } from '../../store/user-slice'
 
 const Login = () => {
+  const dispatch = useDispatch()
+
+  const loginHandler = event => {
+    event.preventDefault()
+    dispatch(userActions.login())
+  }
   return (
     <div className={classes.login}>
       <div className={classes.header}>
@@ -26,7 +34,13 @@ const Login = () => {
 
             <p>Forgot Password ?</p>
 
-            <button className={classes['sign-in']}>Sign In</button>
+            <button
+              className={classes['sign-in']}
+              type="submit"
+              onClick={loginHandler}
+            >
+              Sign In
+            </button>
             <div className={classes['horizontal-line']}>or</div>
 
             <button className={classes['google-signin']}>
