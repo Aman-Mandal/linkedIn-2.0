@@ -5,9 +5,11 @@ import Post from '../Post/Post'
 
 const Feed = () => {
   const [posts, setPosts] = useState([])
+  const [isLoading, setIsLoading] = useState(false)
 
   // Getting post
   useEffect(() => {
+    setIsLoading(true)
     const fetchPosts = async () => {
       const response = await fetch(
         'https://linkedin-clone-c4620-default-rtdb.firebaseio.com/posts.json'
@@ -23,13 +25,13 @@ const Feed = () => {
           message: data[key].message,
         })
       }
-
       setPosts(loadedPosts)
+      setIsLoading(false)
     }
     fetchPosts()
   }, [posts])
 
-  // Adding post 
+  // Adding post
   const addPostHandler = async post => {
     const response = await fetch(
       'https://linkedin-clone-c4620-default-rtdb.firebaseio.com/posts.json',

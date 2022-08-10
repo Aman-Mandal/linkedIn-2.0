@@ -1,9 +1,7 @@
 .sidebar {
-  margin-top: 10px;
-  margin-left: 10px;
+  margin-top: 30px;
+  margin-left: 20px;
   flex: 0.2;
-  position: sticky;
-  top: 80px;
   border-radius: 10px;
   text-align: center;
 }
@@ -75,7 +73,7 @@
 
 .sticky-sidebar{
   position: sticky;
-  top: 80px;
+  top: 100px;
 }
 
 .sidebar-bottom {
