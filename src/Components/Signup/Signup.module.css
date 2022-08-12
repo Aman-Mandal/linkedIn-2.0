@@ -4,6 +4,7 @@
   background-color: white;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 .heading {
   font-size: 2rem;
@@ -76,6 +77,7 @@
 
 .login {
   display: flex;
+  margin-bottom: 20px;
 }
 
 .login > p {

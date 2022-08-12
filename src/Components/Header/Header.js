@@ -5,6 +5,10 @@ import { NavLink } from 'react-router-dom'
 import Avatar from '../Avatar/Avatar'
 
 const Header = () => {
+  const activeClass = {
+    color: 'black',
+  }
+
   const routes = [
     { path: '/feed', name: 'Home', icon: <FaHome /> },
     { path: '/mynetwork', name: 'My Network', icon: <FaUsers /> },
@@ -26,6 +30,7 @@ const Header = () => {
       <div className={classes['header-right']}>
         {routes.map(route => (
           <NavLink
+            style={({ isActive }) => (isActive ? activeClass : undefined)}
             className={classes['header-option']}
             to={route.path}
             key={route.name}

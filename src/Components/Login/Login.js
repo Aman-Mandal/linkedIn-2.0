@@ -8,7 +8,7 @@ import Card from '../Card/Card'
 import Signup from '../Signup/Signup'
 
 const Login = () => {
-  const [isSignup, setIsSignup] = useState(false)
+  const [onLogin, setOnLogin] = useState(true)
 
   const dispatch = useDispatch()
 
@@ -18,7 +18,7 @@ const Login = () => {
   }
 
   const signupHandler = () => {
-    setIsSignup(true)
+    setOnLogin(false)
   }
 
   return (
@@ -28,10 +28,8 @@ const Login = () => {
         <img src={logo} className={classes.logo} />
       </div>
 
-      <div className={classes['login-form']}>
-        {isSignup ? (
-          <Signup />
-        ) : (
+      {onLogin && (
+        <div className={classes['login-form']}>
           <div>
             <Card>
               <h2 className={classes.heading}>Sign in</h2>
@@ -74,8 +72,10 @@ const Login = () => {
               <span onClick={signupHandler}>Join now</span>
             </div>
           </div>
-        )}
-      </div>
+        </div>
+      )}
+
+      {!onLogin && <Signup />}
     </div>
   )
 }

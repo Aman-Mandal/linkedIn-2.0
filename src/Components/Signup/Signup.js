@@ -5,12 +5,6 @@ import classes from './Signup.module.css'
 import google from '../../Assets/google.png'
 
 const Signup = () => {
-  const [signIn, setSignIn] = useState(false)
-
-  const signInHandler = () => {
-    setSignIn(true)
-  }
-
   return (
     <div className={classes.signup}>
       <Card>
@@ -20,11 +14,11 @@ const Signup = () => {
         </p>
 
         <form className={classes['signup-form']}>
-          <input type="text" placeholder="First Name" />
-          <input type="text" placeholder="Last Name" />
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="New Password" />
-          <input type="password" placeholder="Confirm Password" />
+          <input required type="text" placeholder="First Name" />
+          <input required type="text" placeholder="Last Name" />
+          <input required type="email" placeholder="Email" />
+          <input required type="password" placeholder="New Password" />
+          <input required type="password" placeholder="Confirm Password" />
 
           <button className={classes['signup-btn']}>Sign Up</button>
           <div className={classes['horizontal-line']}>or</div>
@@ -34,11 +28,6 @@ const Signup = () => {
           </button>
         </form>
       </Card>
-
-      <div className={classes['login']}>
-        <p>Already on LinkedIn?</p>
-        <span className={signInHandler}>Sign In</span>
-      </div>
     </div>
   )
 }
