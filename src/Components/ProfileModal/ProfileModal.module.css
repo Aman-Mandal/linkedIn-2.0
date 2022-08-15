@@ -1,0 +1,75 @@
+.profile-modal {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.top-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.profile {
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.profile > h2 {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.profile > p {
+  font-size: 14px;
+  color: gray;
+}
+
+.mid-container,
+.bottom-container {
+  cursor: pointer;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  border-top: 1px solid lightgray;
+}
+
+.mid-container > h2,
+.bottom-container > h2 {
+  margin-bottom: 5px;
+  color: black;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.mid-container > h4 {
+  margin-bottom: 4px;
+  color: gray;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.mid-container > p,
+.bottom-container > p {
+  margin-bottom: 4px;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.signout {
+  border-top: 1px solid lightgray;
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.view-profile {
+  border: 1px solid #0a66c2;
+  color: #0a66c2;
+  border-radius: 50px;
+  padding: 5px;
+  margin-bottom: 12px;
+  cursor:pointer;
+}
+
+.view-profile:hover{
+  background-color: whitesmoke;
+  border: 2px solid #0a66c2;
+}
