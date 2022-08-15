@@ -10,7 +10,7 @@ const Home = () => {
     <div className={classes['app-body']}>
       <Sidebar />
       <Feed />
-      {/* <Widget /> */}
+      <Widget />
     </div>
   )
 }

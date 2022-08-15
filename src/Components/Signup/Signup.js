@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import Card from '../Card/Card'
-import Login from '../Login/Login'
 import classes from './Signup.module.css'
 import google from '../../Assets/google.png'
 
@@ -24,7 +23,7 @@ const Signup = () => {
           <div className={classes['horizontal-line']}>or</div>
           <button className={classes['google-signin']}>
             <img src={google} className={classes['google-logo']} />
-            <p>Sign in with Google</p>
+            <p>Sign Up with Google</p>
           </button>
         </form>
       </Card>
