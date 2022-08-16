@@ -1,0 +1,47 @@
+.sidebar {
+  flex: 0.2;
+  background-color: white;
+  text-align: center;
+  border: 1px solid lightgray;
+  margin-top: 10px;
+  border-radius: 12px;
+  height: fit-content;
+  position: sticky;
+  top: 85px;
+}
+
+.top-container {
+  padding-top: 15px;
+}
+
+.top-container > h3 {
+  color: #191919;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.top-container > p {
+  font-size: 15px;
+  font-weight: 400;
+  border-bottom: 1px solid lightgray;
+  padding-bottom: 10px;
+}
+
+.bottom-container > p {
+  font-size: 14px;
+  font-weight: 400;
+  margin: 10px 0;
+}
+
+.bottom-container > h3 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #1d72c6;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.bottom-container > h3:hover{
+    color: #165ca1;
+}

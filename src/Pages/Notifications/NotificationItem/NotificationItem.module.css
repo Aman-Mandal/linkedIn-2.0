@@ -1,0 +1,53 @@
+.notification-item {
+  border-bottom: 1px solid lightgray;
+  padding: 15px 10px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.notification-item:hover {
+  background-color: #e2f0fe;
+}
+
+.top-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.top-container > img {
+  margin-right: 10px;
+  height: 60px;
+  width: 60px;
+  padding: 0 7px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.content > p {
+  font-size: 15px;
+  margin-bottom: 7px;
+}
+
+.reaction {
+  display: flex;
+}
+
+.reaction > p,
+.reaction > p > span {
+  color: gray;
+  font-size: 13px;
+}
+
+.time {
+  margin:10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.time > p {
+  color: gray;
+  font-size: 14px;
+}
