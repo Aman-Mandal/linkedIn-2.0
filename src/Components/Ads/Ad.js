@@ -1,10 +1,13 @@
 import React from 'react'
 import classes from './Ad.module.css'
 import { BsThreeDots } from 'react-icons/bs'
-import Avatar from '../Avatar/Avatar'
 import ScalerLogo from '../../Assets/scaler-logo.jpg'
+import { auth } from '../../Firebase/firebase-config'
+import { Avatar } from '@mui/material'
 
 const Ad = () => {
+  const user = auth.currentUser
+
   return (
     <div className={classes.ad}>
       <div className={classes.header}>
@@ -14,7 +17,9 @@ const Ad = () => {
       <div className={classes.content}>
         <p>Stay up to date with tech concepts &amp; relatable humor</p>
         <div className={classes['ad-imgs']}>
-          <Avatar height={80} width={80} borderRadius={50} />
+          <Avatar src={user?.photoURL} sx={{ height: 70, width: 70 }}>
+            {user.email[0]}
+          </Avatar>
           <img className={classes['ad-logo']} src={ScalerLogo} />
         </div>
         <h3>

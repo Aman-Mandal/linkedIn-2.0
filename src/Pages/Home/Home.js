@@ -1,7 +1,6 @@
 import React from 'react'
 import Feed from '../../Components/Feed/Feed'
 import Sidebar from '../../Components/Sidebar/Sidebar'
-import Signup from '../../Components/Signup/Signup'
 import Widget from '../../Components/Widgets/Widget'
 import classes from './Home.module.css'
 

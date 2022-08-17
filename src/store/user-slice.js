@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-const initialUserState = { user: false }
+const initialUserState = { user: null }
 
 const userSlice = createSlice({
   name: 'user',
@@ -10,7 +10,7 @@ const userSlice = createSlice({
       state.user = true
     },
     logout(state) {
-      state.user = false
+      state.user = null
     },
   },
 })

@@ -3,9 +3,12 @@ import classes from './Sidebar.module.css'
 import backgroundImg from '../../Assets/bg.webp'
 import { MdGroups } from 'react-icons/md'
 import { FaCalendar } from 'react-icons/fa'
-import Avatar from '../Avatar/Avatar'
+import { auth } from '../../Firebase/firebase-config'
+import { Avatar } from '@mui/material'
 
 const Sidebar = () => {
+  const user = auth.currentUser
+
   const recentItem = topic =>
     // prettier-ignore
     <div className={classes['sidebar-recentItem']}>
@@ -35,9 +38,11 @@ const Sidebar = () => {
     <div className={classes.sidebar}>
       <div className={classes['sidebar-top']}>
         <img className={classes.background} src={backgroundImg} />
-        <Avatar borderRadius={50} height={70} width={70} />
-        <h2>Aman Mandal</h2>
-        <p>Frontend Developer 💻</p>
+        <Avatar src={user?.photoURL} sx={{ height: 70, width: 70 }}>
+          {user.email[0]}
+        </Avatar>
+        <h2>{user.displayName}</h2>
+        <p>{user.email}</p>
       </div>
 
       <div className={classes['sidebar-stats']}>

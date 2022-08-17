@@ -1,11 +1,10 @@
 import React from 'react'
-import profilePic from '../../Assets/me.jpg'
-
-const Avatar = ({ width, height, borderRadius }) => {
+import userPic from '../../Assets/user.png'
+const Avatar = ({ width, height, borderRadius, src = userPic }) => {
   return (
     <div>
       <img
-        src={profilePic}
+        src={src}
         alt="me"
         style={{ width: width, height: height, borderRadius: borderRadius }}
       />

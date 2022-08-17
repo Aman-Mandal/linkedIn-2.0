@@ -12,6 +12,7 @@ import Login from './Components/Login/Login'
 import ProfileModal from './Components/ProfileModal/ProfileModal'
 import { auth } from './Firebase/firebase-config'
 import { userActions } from './store/user-slice'
+import { onAuthStateChanged } from 'firebase/auth'
 
 function App() {
   const user = useSelector(state => state.user.user)
@@ -20,7 +21,7 @@ function App() {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    auth.onAuthStateChanged(userAuth => {
+    onAuthStateChanged(auth, userAuth => {
       if (userAuth) {
         // User is LoggedIn
         dispatch(

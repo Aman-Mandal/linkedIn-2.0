@@ -2,22 +2,22 @@ import classes from './Header.module.css'
 import { FaSearch, FaHome, FaBriefcase, FaUsers, FaBell } from 'react-icons/fa'
 import logo from '../../Assets/linkedin.png'
 import { NavLink } from 'react-router-dom'
-import Avatar from '../Avatar/Avatar'
-import { useState } from 'react'
-import ProfileModal from '../ProfileModal/ProfileModal'
+import { auth } from '../../Firebase/firebase-config'
+import { Avatar } from '@mui/material'
+
+const routes = [
+  { path: '/feed', name: 'Home', icon: <FaHome /> },
+  { path: '/mynetwork', name: 'My Network', icon: <FaUsers /> },
+  { path: '/jobs', name: 'Jobs', icon: <FaBriefcase /> },
+  { path: '/messaging', name: 'Messaging', icon: <FaHome /> },
+  { path: '/notifications', name: 'Notifications', icon: <FaBell /> },
+]
 
 const Header = ({ onOpenModal }) => {
   const activeClass = {
     color: 'black',
   }
-
-  const routes = [
-    { path: '/feed', name: 'Home', icon: <FaHome /> },
-    { path: '/mynetwork', name: 'My Network', icon: <FaUsers /> },
-    { path: '/jobs', name: 'Jobs', icon: <FaBriefcase /> },
-    { path: '/messaging', name: 'Messaging', icon: <FaHome /> },
-    { path: '/notifications', name: 'Notifications', icon: <FaBell /> },
-  ]
+  const user = auth.currentUser
 
   return (
     <div className={classes.header}>
@@ -42,7 +42,9 @@ const Header = ({ onOpenModal }) => {
           </NavLink>
         ))}
         <div className={classes['header-avatar']} onClick={onOpenModal}>
-          <Avatar borderRadius={50} height={37} width={37} />
+          <Avatar src={user?.photoURL} sx={{ height: 35, width: 35 }}>
+            {user.email[0]}
+          </Avatar>
           <p>Me</p>
         </div>
       </div>

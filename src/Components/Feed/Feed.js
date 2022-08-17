@@ -2,10 +2,13 @@ import React, { useEffect, useState } from 'react'
 import classes from './Feed.module.css'
 import FeedInput from '../FeedInput/FeedInput'
 import Post from '../Post/Post'
+import { auth } from '../../Firebase/firebase-config'
 
 const Feed = () => {
   const [posts, setPosts] = useState([])
   const [isLoading, setIsLoading] = useState(false)
+
+  const user = auth.currentUser
 
   // Getting post
   useEffect(() => {

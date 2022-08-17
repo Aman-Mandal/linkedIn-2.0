@@ -26,6 +26,7 @@
 
 .post-body {
   overflow-wrap: break-word;
+  margin-top: 25px;
   margin-bottom: 20px;
 }
 

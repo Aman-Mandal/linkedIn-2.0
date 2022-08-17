@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
-import Avatar from '../Avatar/Avatar'
 import { FaImage, FaVideo, FaBriefcase } from 'react-icons/fa'
 import { MdCalendarViewDay } from 'react-icons/md'
 import classes from './FeedInput.module.css'
+import { Avatar } from '@mui/material'
+import { auth } from '../../Firebase/firebase-config'
 
 const inputOptions = [
   { icon: <FaImage />, title: 'Photo', color: '#82B9F1' },
@@ -14,12 +15,14 @@ const inputOptions = [
 const FeedInput = props => {
   const [enteredData, setEnteredData] = useState('')
 
+  const user = auth.currentUser
+
   const formSubmitHandler = event => {
     event.preventDefault()
 
     const postsData = {
-      name: 'Aman',
-      description: 'Developer',
+      name: user.displayName,
+      description: user.email,
       message: enteredData,
     }
     props.onAddPost(postsData)
@@ -32,7 +35,9 @@ const FeedInput = props => {
   return (
     <div className={classes['feed-inputContainer']}>
       <div className={classes['feed-input']}>
-        <Avatar borderRadius={50} height={60} width={60} />
+        <Avatar src={user?.photoURL} sx={{ height: 60, width: 60 }}>
+          {user.email[0]}
+        </Avatar>
         <form onSubmit={formSubmitHandler}>
           <input
             value={enteredData}

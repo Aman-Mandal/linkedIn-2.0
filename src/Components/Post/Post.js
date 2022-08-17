@@ -1,8 +1,9 @@
 import React from 'react'
 import classes from './Post.module.css'
-import Avatar from '../Avatar/Avatar'
 import { FaRegThumbsUp, FaRegCommentDots, FaShare } from 'react-icons/fa'
 import { BiSend } from 'react-icons/bi'
+import { auth } from '../../Firebase/firebase-config'
+import { Avatar } from '@mui/material'
 
 const postIcons = [
   { name: 'Like', icon: <FaRegThumbsUp /> },
@@ -12,10 +13,13 @@ const postIcons = [
 ]
 
 const Post = ({ name, description, message, ImgUrl }) => {
+  const user = auth.currentUser
   return (
     <div className={classes.post}>
       <div className={classes['post-header']}>
-        <Avatar borderRadius={50} height={40} width={40} />
+        <Avatar src={user?.photoURL} sx={{ height: 55, width: 55 }}>
+          {user.email[0]}
+        </Avatar>
         <div className={classes['post-info']}>
           <h4>{name}</h4>
           <p>{description}</p>
