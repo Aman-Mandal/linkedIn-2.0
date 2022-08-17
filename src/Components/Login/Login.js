@@ -6,15 +6,38 @@ import { useDispatch } from 'react-redux'
 import { userActions } from '../../store/user-slice'
 import Card from '../Card/Card'
 import Signup from '../Signup/Signup'
+import { signInWithEmailAndPassword } from 'firebase/auth'
+import { auth } from '../../Firebase/firebase-config'
 
 const Login = () => {
   const [onLogin, setOnLogin] = useState(true)
+  const [email, setEmail] = useState('')
+  const [pass, setPass] = useState('')
 
   const dispatch = useDispatch()
 
   const loginHandler = event => {
     event.preventDefault()
-    dispatch(userActions.login())
+
+    if (!email.includes('@')) {
+      return alert('Please enter a valid email')
+    }
+    if (pass.length === 0) {
+      return alert('Enter password')
+    }
+
+    signInWithEmailAndPassword(auth, email, pass)
+      .then(userAuth => {
+        dispatch(
+          userActions.login({
+            email: userAuth.user.email,
+            uid: userAuth.user.uid,
+            displayName: userAuth.user.displayName,
+            profileUrl: userAuth.user.photoURL,
+          })
+        )
+      })
+      .catch(err => alert(err))
   }
 
   const signupHandler = () => {
@@ -42,11 +65,15 @@ const Login = () => {
                   className={classes.email}
                   type="email"
                   placeholder="Email"
+                  value={email}
+                  onChange={e => setEmail(e.target.value)}
                 />
                 <input
                   className={classes.password}
                   type="password"
                   placeholder="Password"
+                  value={pass}
+                  onChange={e => setPass(e.target.value)}
                 />
 
                 <p>Forgot Password ?</p>
