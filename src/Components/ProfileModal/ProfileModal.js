@@ -2,8 +2,19 @@ import React from 'react'
 import classes from './ProfileModal.module.css'
 import Avatar from '../Avatar/Avatar'
 import Modal from '../Modal/Modal'
+import { useDispatch } from 'react-redux'
+import { userActions } from '../../store/user-slice'
+import { auth } from '../../Firebase/firebase-config'
 
-const ProfileModal = ({onCloseModal}) => {
+const ProfileModal = ({ onCloseModal }) => {
+  const dispatch = useDispatch()
+
+  const signOutHandler = () => {
+    dispatch(userActions.logout())
+    auth.signOut()
+    onCloseModal()
+  }
+
   return (
     <Modal onCloseModal={onCloseModal}>
       <div className={classes['profile-modal']}>
@@ -27,7 +38,9 @@ const ProfileModal = ({onCloseModal}) => {
           <p>Post &amp; Activity</p>
           <p>Job Posting Account</p>
         </div>
-        <div className={classes.signout}>Signout</div>
+        <div onClick={signOutHandler} className={classes.signout}>
+          Signout
+        </div>
       </div>
     </Modal>
   )
