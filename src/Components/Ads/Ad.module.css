@@ -73,3 +73,9 @@
 .follow-btn:hover {
   background-color: whitesmoke;
 }
+
+@media (max-width: 768px){
+  .ad{
+    margin: 10px;
+  }
+}

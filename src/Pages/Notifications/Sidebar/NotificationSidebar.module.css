@@ -42,6 +42,54 @@
   cursor: pointer;
 }
 
-.bottom-container > h3:hover{
-    color: #165ca1;
+.bottom-container > h3:hover {
+  color: #165ca1;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: static;
+    margin: 10px;
+  }
+  .top-container > h3 {
+    font-size: 17px;
+  }
+
+  .top-container > p {
+    font-size: 13px;
+  }
+
+  .bottom-container > p {
+    font-size: 13px;
+  }
+
+  .bottom-container > h3 {
+    font-size: 15px;
+  }
+
+  .top-container {
+    padding: 10px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .top-container > h3 {
+    font-size: 16px;
+  }
+
+  .top-container > p {
+    font-size: 12px;
+  }
+
+  .bottom-container > p {
+    font-size: 12px;
+  }
+
+  .bottom-container > h3 {
+    font-size: 14px;
+  }
+
+  .top-container {
+    padding: 10px 0;
+  }
 }

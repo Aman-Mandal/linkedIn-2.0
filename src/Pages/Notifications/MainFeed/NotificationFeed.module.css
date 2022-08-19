@@ -1,7 +1,13 @@
-.feed{
-    flex: 0.45;
-    margin: 15px;
-    border: 1px solid lightgray;
-    border-radius: 12px;
-    overflow: hidden;
+.feed {
+  flex: 0.45;
+  margin: 15px;
+  border: 1px solid lightgray;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .feed {
+    margin: 10px;
+  }
 }

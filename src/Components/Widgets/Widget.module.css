@@ -1,6 +1,6 @@
 .widgets {
   flex: 0.23;
-  margin-top: 20px;
+  margin-top: 15px;
   margin-right: 20px;
 }
 
@@ -21,7 +21,7 @@
 }
 
 .widgets-header > h2 {
-  font-size: 17px;
+  font-size: 1.1rem;
   font-weight: 500;
   color: #434343;
 }
@@ -38,7 +38,7 @@
 }
 
 .widget-title {
-  font-size: 14px;
+  font-size: 0.9rem;
   font-weight: 600;
   color: #434343;
   margin-bottom: 4px;
@@ -63,4 +63,10 @@
   background-color: #dfdfdf;
   color: gray;
   border-radius: 5px;
+}
+
+@media (max-width: 1024px) {
+  .widgets {
+    display: none;
+  }
 }

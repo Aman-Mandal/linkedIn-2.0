@@ -1,7 +1,7 @@
 .sidebar {
-  margin-top: 20px;
-  margin-left: 20px;
-  flex: 0.17;
+  margin-top: 15px;
+  margin-left: 15px;
+  flex: 0.2;
   border-radius: 10px;
   text-align: center;
 }
@@ -205,4 +205,31 @@
 .sidebar-end:hover {
   color: black;
   background-color: rgb(227, 227, 227);
+}
+
+.show-more-btn {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .sidebar {
+    flex: 0.25;
+  }
+  .show-more-btn {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    flex: 0.6;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+
+  .show-more-btn {
+    border: none;
+    color: gray;
+    font-size: 13px;
+  }
 }

@@ -1,6 +1,11 @@
 import Header from './Components/Header/Header'
 import { useEffect, useState } from 'react'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import Home from './Pages/Home/Home'
 import Jobs from './Pages/Jobs/Jobs'
@@ -56,7 +61,7 @@ function App() {
           <div>
             <Header onOpenModal={openModalHandler} />
             <Routes>
-              <Route path="/" element={<Home />} />
+              <Route path="/" element={<Navigate to="/feed" />} />
               <Route path="/feed" element={<Home />} />
               <Route path="/jobs" element={<Jobs />} />
               <Route path="/messaging" element={<Messaging />} />

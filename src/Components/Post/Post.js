@@ -17,7 +17,7 @@ const Post = ({ name, description, message, ImgUrl }) => {
   return (
     <div className={classes.post}>
       <div className={classes['post-header']}>
-        <Avatar src={ImgUrl} sx={{ height: 55, width: 55 }}>
+        <Avatar src={ImgUrl} className={classes.avatar}>
           {user.email[0]}
         </Avatar>
         <div className={classes['post-info']}>

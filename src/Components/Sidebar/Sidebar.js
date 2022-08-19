@@ -1,13 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import classes from './Sidebar.module.css'
 import backgroundImg from '../../Assets/bg.webp'
-import { MdGroups } from 'react-icons/md'
+import { MdGroups, MdKeyboardArrowDown } from 'react-icons/md'
 import { FaCalendar } from 'react-icons/fa'
 import { auth } from '../../Firebase/firebase-config'
 import { Avatar } from '@mui/material'
 
 const Sidebar = () => {
   const user = auth.currentUser
+  const [showMore, setShowMore] = useState(false)
+
+  const showMoreHandler = () => {
+    setShowMore(!showMore)
+  }
 
   const recentItem = topic =>
     // prettier-ignore
@@ -38,50 +43,64 @@ const Sidebar = () => {
     <div className={classes.sidebar}>
       <div className={classes['sidebar-top']}>
         <img className={classes.background} src={backgroundImg} />
-        <Avatar className={classes.avatar} src={user?.photoURL} sx={{ height: 80, width: 80 }}>
+        <Avatar
+          className={classes.avatar}
+          src={user?.photoURL}
+          sx={{ height: 80, width: 80 }}
+        >
           {user.email[0]}
         </Avatar>
         <h2>{user.displayName}</h2>
         <p>{user.email}</p>
       </div>
 
-      <div className={classes['sidebar-stats']}>
-        <div className={classes['sidebar-stat']}>
-          <p>Who's viewed your profile</p>
-          <p className={classes['sidebar-number']}>459</p>
-        </div>
-        <div className={classes['sidebar-stat']}>
-          <p>Impressions of your posts</p>
-          <p className={classes['sidebar-number']}>1,567</p>
-        </div>
-      </div>
+      {showMore && (
+        <div className={classes['show-groups']}>
+          <div className={classes['sidebar-stats']}>
+            <div className={classes['sidebar-stat']}>
+              <p>Who's viewed your profile</p>
+              <p className={classes['sidebar-number']}>459</p>
+            </div>
+            <div className={classes['sidebar-stat']}>
+              <p>Impressions of your posts</p>
+              <p className={classes['sidebar-number']}>1,567</p>
+            </div>
+          </div>
 
-      <div className={classes['sticky-sidebar']}>
-        <div className={classes['sidebar-bottom']}>
-          <p>Recent</p>
-          {recentItem('ReactJS')}
-          {recentItem('Javascript')}
-          {recentItem('webdevelopment')}
-          {recentItem('softwaredevelopment')}
-          {recentItem('design')}
-        </div>
+          <div className={classes['sticky-sidebar']}>
+            <div className={classes['sidebar-bottom']}>
+              <p>Recent</p>
+              {recentItem('ReactJS')}
+              {recentItem('Javascript')}
+              {recentItem('webdevelopment')}
+              {recentItem('softwaredevelopment')}
+              {recentItem('design')}
+            </div>
 
-        <div className={classes['sidebar-groups']}>
-          <p>Groups</p>
-          {recentGroups('Software Developer')}
-          {recentGroups('React Developers')}
-          {recentGroups('Javascript Developers')}
-          {recentGroups('FrontEnd Developers')}
-        </div>
+            <div className={classes['sidebar-groups']}>
+              <p>Groups</p>
+              {recentGroups('Software Developer')}
+              {recentGroups('React Developers')}
+              {recentGroups('Javascript Developers')}
+              {recentGroups('FrontEnd Developers')}
+            </div>
 
-        <div className={classes['sidebar-events']}>
-          <p>Events</p>
-          {recentEvents('Tech Stories with Aman...')}
-          {recentEvents('Machine Learning with Mosh')}
-        </div>
+            <div className={classes['sidebar-events']}>
+              <p>Events</p>
+              {recentEvents('Tech Stories with Aman...')}
+              {recentEvents('Machine Learning with Mosh')}
+            </div>
 
-        <div className={classes['sidebar-end']}>Discover More</div>
-      </div>
+            <div className={classes['sidebar-end']}>Discover More</div>
+          </div>
+        </div>
+      )}
+      <button className={classes['show-more-btn']} onClick={showMoreHandler}>
+        {!showMore ? 'Show more' : 'show less'}
+        <span>
+          <MdKeyboardArrowDown />
+        </span>
+      </button>
     </div>
   )
 }

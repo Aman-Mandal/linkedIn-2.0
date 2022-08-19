@@ -1,4 +1,11 @@
 .app-body {
   display: flex;
-  justify-content:center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .app-body {
+    display: flex;
+    flex-direction: column;
+  }
 }

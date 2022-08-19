@@ -6,6 +6,11 @@
   margin-bottom: 10px;
 }
 
+.avatar {
+  height: 55px;
+  width: 55px;
+}
+
 .post-header {
   display: flex;
   margin-bottom: 10px;
@@ -49,7 +54,37 @@
   align-items: center;
 }
 
-.post-btn:hover{
-    cursor: pointer;
-    color: black;
+.post-btn:hover {
+  cursor: pointer;
+  color: black;
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 480px) {
+  .post {
+    padding: 10px;
+  }
+  .post-btn > p {
+    display: none;
+  }
+
+  .post-info > h4 {
+    font-size: 0.9rem;
+  }
+
+  .post-info > p {
+    font-size: 10px;
+  }
+
+  .post-body > p {
+    font-size: 0.9rem;
+  }
+
+  .avatar {
+    object-fit: contain;
+    height: 50px;
+    width: 50px;
+  }
 }

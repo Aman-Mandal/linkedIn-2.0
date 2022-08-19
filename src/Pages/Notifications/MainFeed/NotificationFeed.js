@@ -15,7 +15,7 @@ const DUMMY_NOTI = [
     img: apple,
     id: 'n1',
     content:
-      'Apple may be loading the iphone with more ads. Hear the latest news.',
+      'Apple may be loading the iphone with more ads. Hear the latest news now on our news letter',
     time: '1h',
     reaction: '1,661 reactions',
     comments: '120 comments',
@@ -24,7 +24,7 @@ const DUMMY_NOTI = [
     img: fb,
     id: 'n2',
     content:
-      "Facebook getting into delivery business. Here's the news on the tech giant local focus",
+      "Facebook getting into delivery business. Here's the news on the tech giant local focus and see what's going there!",
     time: '12h',
   },
   {
@@ -81,7 +81,8 @@ const DUMMY_NOTI = [
     img: apple,
     id: 'n9',
     content:
-      'Apple may be loading the iphone with more ads. Hear the latest news.',
+      'Apple may be loading the iphone with more ads. Hear the latest news now on our news letter',
+
     time: '1h',
     reaction: '1,661 reactions',
     comments: '120 comments',
@@ -90,7 +91,8 @@ const DUMMY_NOTI = [
     img: fb,
     id: 'n10',
     content:
-      "Facebook getting into delivery business. Here's the news on the tech giant local focus",
+      "Facebook getting into delivery business. Here's the news on the tech giant local focus and see what's going there!",
+
     time: '12h',
   },
   {

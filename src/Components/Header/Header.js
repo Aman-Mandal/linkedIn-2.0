@@ -4,12 +4,13 @@ import logo from '../../Assets/linkedin.png'
 import { NavLink } from 'react-router-dom'
 import { auth } from '../../Firebase/firebase-config'
 import { Avatar } from '@mui/material'
+import { MdOutlineMessage } from 'react-icons/md'
 
 const routes = [
   { path: '/feed', name: 'Home', icon: <FaHome /> },
   { path: '/mynetwork', name: 'My Network', icon: <FaUsers /> },
   { path: '/jobs', name: 'Jobs', icon: <FaBriefcase /> },
-  { path: '/messaging', name: 'Messaging', icon: <FaHome /> },
+  { path: '/messaging', name: 'Messaging', icon: <MdOutlineMessage /> },
   { path: '/notifications', name: 'Notifications', icon: <FaBell /> },
 ]
 
@@ -22,9 +23,13 @@ const Header = ({ onOpenModal }) => {
   return (
     <div className={classes.header}>
       <div className={classes['header-left']}>
-        <img src={logo} alt="LinkedIn logo" />
+        <img
+          className={classes['header-logo']}
+          src={logo}
+          alt="LinkedIn logo"
+        />
         <div className={classes['header-search']}>
-          <FaSearch />
+          <FaSearch className={classes.searchLogo} />
           <input />
         </div>
       </div>
@@ -42,7 +47,7 @@ const Header = ({ onOpenModal }) => {
           </NavLink>
         ))}
         <div className={classes['header-avatar']} onClick={onOpenModal}>
-          <Avatar src={user?.photoURL} sx={{ height: 35, width: 35 }}>
+          <Avatar src={user?.photoURL} className={classes.avatar}>
             {user.email[0]}
           </Avatar>
           <p>Me</p>

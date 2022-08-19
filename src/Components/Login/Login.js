@@ -54,7 +54,7 @@ const Login = () => {
       {onLogin && (
         <div className={classes['login-form']}>
           <div>
-            <Card>
+            <Card width={330}>
               <h2 className={classes.heading}>Sign in</h2>
               <p className={classes.subheading}>
                 Stay updated on your professional world
