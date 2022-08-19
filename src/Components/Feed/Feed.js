@@ -23,6 +23,7 @@ const Feed = () => {
       for (const key in data) {
         loadedPosts.push({
           id: key,
+          img: data[key].img,
           name: data[key].name,
           description: data[key].description,
           message: data[key].message,
@@ -54,8 +55,9 @@ const Feed = () => {
     <div className={classes.feed}>
       <FeedInput onAddPost={addPostHandler} />
       {posts
-        .map(({ id, name, message, description }) => (
+        .map(({ id, name, message, description, img }) => (
           <Post
+            ImgUrl={img}
             key={id}
             name={name}
             message={message}

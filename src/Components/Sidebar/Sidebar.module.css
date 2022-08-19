@@ -19,14 +19,12 @@
 }
 
 .sidebar-top .avatar {
-  width: 70px;
-  height: 70px;
   border-radius: 50%;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .sidebar-top > h2 {
-  margin-bottom: 6px;
+  margin-bottom: 2px;
   font-size: 18px;
   font-weight: 600;
   color: #191919;
@@ -71,7 +69,7 @@
   color: #0a66c2;
 }
 
-.sticky-sidebar{
+.sticky-sidebar {
   position: sticky;
   top: 85px;
 }

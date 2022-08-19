@@ -21,6 +21,7 @@ const FeedInput = props => {
     event.preventDefault()
 
     const postsData = {
+      img: user.photoURL,
       name: user.displayName,
       description: user.email,
       message: enteredData,
@@ -36,7 +37,7 @@ const FeedInput = props => {
     <div className={classes['feed-inputContainer']}>
       <div className={classes['feed-input']}>
         <Avatar src={user?.photoURL} sx={{ height: 60, width: 60 }}>
-          {user.email[0]}
+          {user?.email[0]}
         </Avatar>
         <form onSubmit={formSubmitHandler}>
           <input

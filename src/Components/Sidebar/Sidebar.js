@@ -38,7 +38,7 @@ const Sidebar = () => {
     <div className={classes.sidebar}>
       <div className={classes['sidebar-top']}>
         <img className={classes.background} src={backgroundImg} />
-        <Avatar src={user?.photoURL} sx={{ height: 70, width: 70 }}>
+        <Avatar className={classes.avatar} src={user?.photoURL} sx={{ height: 80, width: 80 }}>
           {user.email[0]}
         </Avatar>
         <h2>{user.displayName}</h2>
