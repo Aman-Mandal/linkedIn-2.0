@@ -19,6 +19,11 @@
   font-weight: 500;
 }
 
+.avatar {
+  height: 60px;
+  width: 60px;
+}
+
 .profile > p {
   font-size: 14px;
   color: gray;
@@ -58,6 +63,7 @@
   border-top: 1px solid lightgray;
   padding: 10px 0;
   cursor: pointer;
+  font-size: 13px;
 }
 
 .view-profile {
@@ -66,10 +72,39 @@
   border-radius: 50px;
   padding: 5px;
   margin-bottom: 12px;
-  cursor:pointer;
+  cursor: pointer;
 }
 
-.view-profile:hover{
+.view-profile:hover {
   background-color: whitesmoke;
   border: 2px solid #0a66c2;
+}
+
+@media (max-width: 768px) {
+  .avatar {
+    height: 45px;
+    width: 45px;
+  }
+
+  .profile > h2 {
+    font-size: 16px;
+  }
+
+  .profile > p {
+    font-size: 13px;
+  }
+
+  .mid-container > h2,
+  .bottom-container > h2 {
+    font-size: 14px;
+  }
+
+  .mid-container > p,
+  .bottom-container > p {
+    font-size: 12px;
+  }
+
+  .mid-container > h4 {
+    font-size: 13px;
+  }
 }

@@ -18,3 +18,17 @@
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   z-index: 20;
 }
+
+@media (max-width: 768px) {
+  .modal {
+    left: 50%;
+    width: 33%;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal {
+    left: 30%;
+    width: 60%;
+  }
+}

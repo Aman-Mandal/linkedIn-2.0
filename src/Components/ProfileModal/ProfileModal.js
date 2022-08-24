@@ -21,7 +21,7 @@ const ProfileModal = ({ onCloseModal }) => {
     <Modal onCloseModal={onCloseModal}>
       <div className={classes['profile-modal']}>
         <div className={classes['top-container']}>
-          <Avatar src={user.photoURL} sx={{ height: 60, width: 60 }}>
+          <Avatar src={user.photoURL} className={classes.avatar}>
             {user.email[0]}
           </Avatar>
 

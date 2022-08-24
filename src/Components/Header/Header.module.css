@@ -12,6 +12,7 @@
 
 .header-left {
   display: flex;
+  align-items: center;
 }
 
 .header-left > img {
@@ -111,12 +112,22 @@
     display: none;
   } */
 
+  .header-left{
+    align-items: center;
+  }
+
+  .header-logo{
+    height: 30px;
+    width: 30px;
+  }
   .header-search {
     width: 8rem;
+    height: 1rem;
   }
 
   .header-search > input {
     width: 100%;
+    font-size: 12px;
   }
 }
 

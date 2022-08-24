@@ -134,3 +134,54 @@
   color: #05498d;
   text-decoration: underline;
 }
+
+@media (max-width: 768px) {
+  .header > h2 {
+    font-size: 1.5rem;
+  }
+
+  .logo {
+    height: 30px;
+    width: 30px;
+  }
+  .login-form {
+    margin-top: 4rem;
+  }
+
+  .heading {
+    font-size: 1.6rem;
+  }
+  .subheading {
+    font-size: 0.8rem;
+  }
+
+  .form > input {
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    border: 1px solid gray;
+  }
+
+  .email {
+    margin-bottom: 20px;
+  }
+
+  .password {
+    margin-bottom: 10px;
+  }
+
+  .form > p {
+    font-size: 12px;
+  }
+
+  .sign-in {
+    padding: 15px 10px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 6px;
+  }
+  .google-signin {
+    font-size: 13px;
+    padding: 7px 0px;
+  }
+}

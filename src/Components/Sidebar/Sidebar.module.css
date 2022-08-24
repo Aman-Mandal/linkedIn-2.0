@@ -69,9 +69,9 @@
   color: #0a66c2;
 }
 
-.sticky-sidebar {
+.sticky-recents {
   position: sticky;
-  top: 85px;
+  top: 90px;
 }
 
 .sidebar-bottom {
@@ -207,16 +207,9 @@
   background-color: rgb(227, 227, 227);
 }
 
-.show-more-btn {
-  display: none;
-}
-
 @media (max-width: 1024px) {
   .sidebar {
     flex: 0.25;
-  }
-  .show-more-btn {
-    display: none;
   }
 }
 
@@ -227,9 +220,13 @@
     margin-left: 10px;
   }
 
-  .show-more-btn {
-    border: none;
-    color: gray;
-    font-size: 13px;
+  .sidebar-top {
+    border-bottom: 1px solid lightgray;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
   }
+
+  /* .show-groups {
+    display: none;
+  } */
 }
