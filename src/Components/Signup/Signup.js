@@ -84,7 +84,7 @@ const Signup = () => {
           />
           <input
             type="text"
-            placeholder="Add Profile Pic (optional)"
+            placeholder="Add Profile Pic's URL (optional)"
             value={profilePic}
             onChange={e => setProfilePic(e.target.value)}
           />
